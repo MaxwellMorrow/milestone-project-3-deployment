@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "list of things to do:",
   "main": "server.js",
+  "engines": {
+    "node":"14.18.1",
+    "npm": "8.13.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",

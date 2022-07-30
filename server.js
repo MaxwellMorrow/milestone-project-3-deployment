@@ -3,21 +3,26 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
-// const path = require('path');
+const path = require('path');
 const bodyParser = require("body-parser");
 const defineCurrentUser = require("./middleware/defineCurrentUser")
+
+
 // configuration
 const PORT = process.env.PORT;
-
+// process.env.NODE_ENV = production or undefined
 
 // middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.resolve(__dirname, "../frontend/build"))); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(defineCurrentUser)
+
+if(process.env.NODE_ENV === "production"){
+app.use(express.static(path.join(__dirname,"client/build")))
+}
 
 
 
