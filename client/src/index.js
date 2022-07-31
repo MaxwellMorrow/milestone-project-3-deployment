@@ -12,7 +12,7 @@ import LogIn from "./components/LogIn";
 import Ingredients from './components/ingredients';
 import ErrorPage from './components/errorPage';
 import Root from './components/Root';
-
+import SignUp from './components/signUp';
 import CurrentUserProvider from "./contexts/CurrentUser";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,7 +21,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<LogIn />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </Router>
   </CurrentUserProvider>
