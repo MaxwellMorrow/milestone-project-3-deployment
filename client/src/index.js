@@ -18,7 +18,12 @@ import CurrentUserProvider from "./contexts/CurrentUser";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentUserProvider>
-   <App/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LogIn />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   </CurrentUserProvider>
 );
 
