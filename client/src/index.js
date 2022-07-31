@@ -18,9 +18,7 @@ import CurrentUserProvider from "./contexts/CurrentUser";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentUserProvider>
-  <Router>
    <App/>
-  </Router>
   </CurrentUserProvider>
 );
 

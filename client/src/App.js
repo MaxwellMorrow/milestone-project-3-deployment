@@ -10,10 +10,12 @@ import { BrowserRouter as Router,
 function App() {
   return (
     <div className="App">
+      <Router>
       <Routes>
         <Route path='/' element={<LogIn/>}/>
         <Route path='/signup' element={<Signup/>}/>
       </Routes>
+      </Router>
     </div>
   );
 }
