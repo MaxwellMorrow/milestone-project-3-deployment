@@ -6,7 +6,7 @@ import './styleSheets/tablet.css';
 import App from './App';
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import LogIn from "./components/LogIn";
 import Ingredients from './components/ingredients';
