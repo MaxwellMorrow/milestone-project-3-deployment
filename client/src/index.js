@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './styleSheets/index.css';
 import './styleSheets/mobile.css';
 import './styleSheets/tablet.css';
-import App from './App';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";

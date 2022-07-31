@@ -1,4 +1,4 @@
-import '../styleSheets/App.css';
+import '../styleSheets/index.css';
 import React from "react";
 import { useContext, useState } from "react";
 import { CurrentUser } from "../contexts/CurrentUser";
@@ -70,23 +70,23 @@ function LogIn() {
         required
       ></input>
 
-      <button class="styledButton" type="submit">
+      <Link to="" class="styledButton">
         Login
-      </button>
+      </Link>
 
       <div class="rememberBox">
         <input type="checkbox"></input>
-        <label for="remeber">Remember Me</label>
+        <label for="remeber">&nbsp; Remember Me</label>
       </div>
 
-      <button class="styledButton" type="submit">
+      <Link to="" class="styledButton">
         Forgot Password
-      </button>
-      <Link to="/signUp">
-        <button class="styledButton" type="submit" a href="./signUp">
-          Sign Up
-        </button>
       </Link>
+
+      <Link to="/signUp" class="styledButton">
+          Sign Up
+      </Link>
+      
     </div>
   );
 }
