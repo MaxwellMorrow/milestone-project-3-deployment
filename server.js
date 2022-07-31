@@ -35,6 +35,9 @@ app.get('/', (req, res) => {
 app.use('/users', require('./conrollers/users'))
 app.use('/authentication', require('./conrollers/authentication'))
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname), "../build/index.html");
+});
 
 
 // server listen

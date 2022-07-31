@@ -22,6 +22,7 @@ root.render(
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path='*' element={<ErrorPage/>}/>
       </Routes>
     </Router>
   </CurrentUserProvider>
