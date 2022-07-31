@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styleSheets/index.css';
+import './styleSheets/mobile.css';
+import './styleSheets/tablet.css';
 import App from './App';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,7 +20,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentUserProvider>
   <Router>
-    <NavBar />
     <Routes>
       <Route path="/" element={<Root/>} />
       <Route path="/login" element={<LogIn />} />

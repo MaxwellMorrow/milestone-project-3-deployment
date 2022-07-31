@@ -1,0 +1,29 @@
+@media only screen 
+  and (min-device-width: 431px) 
+  and (max-device-width: 1024px){
+
+    body
+
+    .entry{
+        min-width: 425px;
+        min-height: 700px;
+        padding: 50px;
+    }
+
+    input.first{
+        margin-bottom: 30px;
+    }
+    
+    input.second{
+        margin-bottom: 50px;
+    }
+
+    .rememberBox{
+        margin: 10px 0;
+    }
+      
+    .styledButton{
+        min-width: 270px;
+        min-height: 40px;
+    }
+}
