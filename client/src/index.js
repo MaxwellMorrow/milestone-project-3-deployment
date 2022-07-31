@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LogIn from "./components/LogIn";
 import Ingredients from './components/ingredients';
-import NavBar from './components/navbar';
 import ErrorPage from './components/errorPage';
 import Root from './components/Root';
 
@@ -20,12 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <CurrentUserProvider>
   <Router>
-    <Routes>
-      <Route path="/" element={<Root/>} />
-      <Route path="/login" element={<LogIn />} />
-      <Route path="/ingredients" element={<Ingredients />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
+   <App/>
   </Router>
   </CurrentUserProvider>
 );
