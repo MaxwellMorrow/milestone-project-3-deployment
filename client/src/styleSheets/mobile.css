@@ -1,0 +1,28 @@
+@media only screen
+    and (max-width: 430px)
+    and (orientation: portrait){
+
+    body
+
+    .entry{
+        width: 375px;
+        height: 600px;
+    }
+
+    input.first{
+        margin-bottom: 30px;
+    }
+    
+    input.second{
+        margin-bottom: 25px;
+    }
+
+    .rememberBox{
+        margin: 10px 0;
+    }
+      
+    .styledButton{
+        min-width: 270px;
+        min-height: 40px;
+    }
+}

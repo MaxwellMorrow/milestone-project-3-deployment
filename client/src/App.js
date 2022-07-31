@@ -1,4 +1,4 @@
-import './App.css';
+import './styleSheets/App.css';
 import LogIn from './components/LogIn';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom/client";

@@ -1,4 +1,4 @@
-import "../App.css";
+import '../styleSheets/App.css';
 import React from "react";
 import { useContext, useState } from "react";
 import { CurrentUser } from "../contexts/CurrentUser";
@@ -56,7 +56,7 @@ function LogIn() {
       </div>
       <label for="user">Username</label>
       <input
-        class="input"
+        class="input first"
         type="text"
         placeholder="Enter Username"
         required
@@ -64,7 +64,7 @@ function LogIn() {
 
       <label for="pass">Password</label>
       <input
-        class="input"
+        class="input second"
         type="text"
         placeholder="Enter Password"
         required
@@ -73,9 +73,13 @@ function LogIn() {
       <button class="styledButton" type="submit">
         Login
       </button>
-      <label type="checkbox" checked="checked">
-        Remember Me
-      </label>
+
+      <div class="rememberBox">
+        <input type="checkbox"></input>
+        <label for="remeber">
+          Remember Me
+        </label>
+      </div>
 
       <button class="styledButton" type="submit">
         Forgot Password
