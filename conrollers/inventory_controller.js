@@ -5,9 +5,7 @@ const pool = require("../models/db");
 
 router.get("/", async (req, res) => {
   try {
-    // const { email, firstName, lastName } = req.body;
-    // const user = await db.query("SELECT * FROM users");
-    const results = await pool.query("SELECT * FROM users");
+    const results = await pool.query("SELECT * FROM inventory");
     console.log(results)
     res.json(results.rows);
   } catch (err) {

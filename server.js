@@ -46,4 +46,4 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
     console.log('We up in here on port ', PORT)
 });
-console.log(process.env.NODE_ENV);
+
