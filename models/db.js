@@ -10,7 +10,9 @@ const devConfig = {
 };
 const proConfig = {
   connectionString: process.env.DATABASE_URL, // HEROKU ADDON
-
+    ssl:{
+        rejectUnauthorized:false
+    }
 };
 
 

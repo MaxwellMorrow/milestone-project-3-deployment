@@ -34,10 +34,12 @@ app.get('/', (req, res) => {
 // Auth routes
 app.use('/users', require('./conrollers/users'))
 app.use('/authentication', require('./conrollers/authentication'))
+app.use("/inventory",require("./conrollers/inventory_controller"))
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname), "../build/index.html");
 });
+
 
 
 // server listen

@@ -6,10 +6,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 function LogIn() {
 
-
-  // something about the commented out code below is breaking this component.
-
-
   let navigate = useNavigate();
   function redirectingredients() {
     navigate("/ingredients");
