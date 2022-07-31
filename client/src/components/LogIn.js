@@ -2,7 +2,7 @@ import '../styleSheets/App.css';
 import React from "react";
 import { useContext, useState } from "react";
 import { CurrentUser } from "../contexts/CurrentUser";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function LogIn() {
 
@@ -76,17 +76,17 @@ function LogIn() {
 
       <div class="rememberBox">
         <input type="checkbox"></input>
-        <label for="remeber">
-          Remember Me
-        </label>
+        <label for="remeber">Remember Me</label>
       </div>
 
       <button class="styledButton" type="submit">
         Forgot Password
       </button>
-      <button class="styledButton" type="submit" a href="./signUp">
-        Sign Up
-      </button>
+      <Link to="/signUp">
+        <button class="styledButton" type="submit" a href="./signUp">
+          Sign Up
+        </button>
+      </Link>
     </div>
   );
 }
