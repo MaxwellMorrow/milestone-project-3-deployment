@@ -1,5 +1,5 @@
-import "../styleSheets/App.css";
-
+import "../styleSheets/index.css";
+import { Link } from "react-router-dom";
 
 
 function SignUp() {
@@ -31,20 +31,16 @@ function SignUp() {
         placeholder="Enter Password"
         required
       ></input>
-      <select name="dropdown">
+      <select name="dropdown" class="dropdown">
         <option value="Role" selected>
-          Manager
+          Not a Manager
         </option>
-        <option value="Java">Not A Manager</option>
+        <option value="Java">Manager</option>
       </select>
-      <button
-        class="styledButton buttonContainer"
-        type="submit"
-        a
-        href="./signUp"
-      >
-        Sign Up
-      </button>
+
+      <Link to="" class="styledButton">
+          Sign Up
+      </Link>
     </div>
   );
 }
