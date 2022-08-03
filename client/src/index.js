@@ -13,6 +13,7 @@ import ErrorPage from './components/errorPage';
 import SignUp from './components/signUp';
 import CurrentUserProvider from "./contexts/CurrentUser";
 import Inventory from "./components/inventory"
+import Construction from "./components/construction";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +24,7 @@ root.render(
         <Route path="/signup" element={<SignUp />} />
         <Route path='/inventory' element={<Inventory/>}/>
         <Route path='*' element={<ErrorPage/>}/>
+        <Route path='/construction' element={< Construction/>} />
       </Routes>
     </Router>
   </CurrentUserProvider>

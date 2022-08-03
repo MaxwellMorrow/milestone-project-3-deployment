@@ -38,7 +38,7 @@ function SignUp() {
         <option value="Java">Manager</option>
       </select>
 
-      <Link to="" class="styledButton">
+      <Link to="/construction" class="styledButton">
           Sign Up
       </Link>
     </div>

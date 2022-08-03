@@ -68,7 +68,7 @@ body {
   background: linear-gradient(to right, #14163c 0%, #03217b 79%);
   text-transform: uppercase;
   text-align: center;
-  padding: 3%;
+  padding: 3.3%;
   letter-spacing: 0.2rem;
   width: 65%;
   height: 3rem;
@@ -88,4 +88,10 @@ a:link, a:visited, a:hover, a:active{
 
 .dropdown{
   margin: 25px 0 10px;
+}
+
+.construction{
+  color: rgb(255, 255, 255);
+  font-size: 75px;
+  width: 100%;
 }
