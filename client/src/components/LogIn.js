@@ -27,7 +27,7 @@ function LogIn() {
       console.log("sending!");
       console.log(JSON.stringify(credentials));
       const response = await fetch(
-        "https://kulalodge-deploy.herokuapp.com/auth/login",
+        "/auth/login",
         {
           method: "POST",
           headers: {
@@ -37,7 +37,7 @@ function LogIn() {
         }
       );
       const parseRes = await response.json();
-
+        console.log(parseRes)
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken);
       } else {

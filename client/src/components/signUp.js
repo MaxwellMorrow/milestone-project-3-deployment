@@ -20,7 +20,7 @@ function SignUp() {
       console.log("sending!");
       console.log(JSON.stringify(user));
       const response = await fetch(
-        "https://kulalodge-deploy.herokuapp.com/auth/register",
+        "/auth/register",
         {
           method: "POST",
           headers: {
