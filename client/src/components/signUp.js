@@ -89,7 +89,7 @@ function SignUp() {
       <Link
         to="/construction"
         class="styledButton"
-        onClick={() => handleSubmit}
+        onClick={handleSubmit}
       >
         Sign Up
       </Link>
