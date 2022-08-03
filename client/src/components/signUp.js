@@ -33,7 +33,7 @@ function SignUp() {
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
-        navigate("/construction");
+        navigate("/inventory");
       } else {
         console.log("no token!");
       }
