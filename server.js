@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 const path = require('path');
 const bodyParser = require("body-parser");
-const defineCurrentUser = require("./middleware/defineCurrentUser")
+// const defineCurrentUser = require("./middleware/defineCurrentUser")
 
 
 // configuration
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(defineCurrentUser)
+// app.use(defineCurrentUser)
 
 if(process.env.NODE_ENV === "production"){
 app.use(express.static(path.join(__dirname,"client/build")))
