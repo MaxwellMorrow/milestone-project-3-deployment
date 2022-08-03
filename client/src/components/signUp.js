@@ -19,13 +19,16 @@ function SignUp() {
     try {
       console.log("sending!");
       console.log(JSON.stringify(user));
-      const response = await fetch("/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        "https://kulalodge-deploy.herokuapp.com/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
