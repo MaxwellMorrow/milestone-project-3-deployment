@@ -6,9 +6,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 function LogIn() {
   let navigate = useNavigate();
-  function redirectingredients() {
-    navigate("/ingredients");
-  }
 
 
   // uncomment when usecontext is working
@@ -40,6 +37,7 @@ function LogIn() {
         console.log(parseRes)
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
+        navigate("/construction");
       } else {
         console.log("no token!");
       }

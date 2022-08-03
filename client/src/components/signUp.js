@@ -33,12 +33,14 @@ function SignUp() {
 
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
+        navigate("/construction");
       } else {
         console.log("no token!");
       }
     } catch (err) {
       console.error(err.message);
     }
+    
   };
 
   return (
