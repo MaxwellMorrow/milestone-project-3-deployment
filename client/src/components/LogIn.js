@@ -38,8 +38,8 @@ function LogIn() {
       );
       const parseRes = await response.json();
         console.log(parseRes)
-      if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
       } else {
         console.log("no token!");
       }

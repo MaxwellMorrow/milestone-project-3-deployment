@@ -31,8 +31,8 @@ function SignUp() {
       );
       const parseRes = await response.json();
 
-      if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
       } else {
         console.log("no token!");
       }
