@@ -94,4 +94,5 @@ a:link, a:visited, a:hover, a:active{
   color: rgb(255, 255, 255);
   font-size: 75px;
   width: 100%;
+  opacity: 0.9;
 }
