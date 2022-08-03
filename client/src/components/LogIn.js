@@ -66,7 +66,7 @@ function LogIn() {
         required
       ></input>
 
-      <Link to="" class="styledButton">
+      <Link to="/construction" class="styledButton">
         Login
       </Link>
 
@@ -75,7 +75,7 @@ function LogIn() {
         <label for="remeber">&nbsp; Remember Me</label>
       </div>
 
-      <Link to="" class="styledButton">
+      <Link to="/construction" class="styledButton">
         Forgot Password
       </Link>
 

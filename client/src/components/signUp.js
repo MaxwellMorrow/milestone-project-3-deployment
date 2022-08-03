@@ -1,49 +1,42 @@
 import "../styleSheets/index.css";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
-import {useNavigate} from "react-router-dom"
-
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-
   let navigate = useNavigate();
 
-  const [user,setUser] = useState({
-    email:"",
-    firstname:"",
-    lastname:"",
-    password:"",
-    role:"viewer"
-  })
+  const [user, setUser] = useState({
+    email: "",
+    firstname: "",
+    lastname: "",
+    password: "",
+    role: "viewer",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("sending!")
-      console.log(JSON.stringify(user))
-      const response = await fetch(
-        "/auth/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        }
-      );
+      console.log("sending!");
+      console.log(JSON.stringify(user));
+      const response = await fetch("/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
         localStorage.setItem("token", parseRes.jwtToken);
-       
       } else {
-        console.log("no token!")
+        console.log("no token!");
       }
     } catch (err) {
       console.error(err.message);
     }
   };
-
 
   return (
     <div class="entry">
@@ -86,9 +79,20 @@ function SignUp() {
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
       ></input>
-      <button class="styledButton" onClick={handleSubmit}>
+      <select name="dropdown" class="dropdown">
+        <option value="Role" selected>
+          Not a Manager
+        </option>
+        <option value="Java">Manager</option>
+      </select>
+
+      <Link
+        to="/construction"
+        class="styledButton"
+        onClick={() => handleSubmit}
+      >
         Sign Up
-      </button>
+      </Link>
     </div>
   );
 }
