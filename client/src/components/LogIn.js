@@ -5,43 +5,43 @@ import { CurrentUser } from "../contexts/CurrentUser";
 import { useNavigate, Link } from "react-router-dom";
 
 function LogIn() {
-
   let navigate = useNavigate();
   function redirectingredients() {
     navigate("/ingredients");
   }
 
-  const { setCurrentUser } = useContext(CurrentUser);
+
+  // uncomment when usecontext is working
+  // const { setCurrentUser } = useContext(CurrentUser);
 
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState(null);
 
   // submit function send token to backend if its in local storage
   async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      console.log("sending!");
+      console.log(JSON.stringify(credentials));
+      const response = await fetch("/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
+      const parseRes = await response.json();
 
-
-
-
-    const response = await fetch(`/authentication/`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(credentials),
-    });
-
-    const data = await response.json();
-
-    if (response.status === 200) {
-      setCurrentUser(data.user);
-      localStorage.setItem("token", data.token);
-      redirectingredients();
-    } else {
-      setErrorMessage(data.message);
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken);
+      } else {
+        console.log("no token!");
+      }
+    } catch (err) {
+      console.error(err.message);
     }
   }
 
@@ -56,6 +56,10 @@ function LogIn() {
         type="text"
         placeholder="Enter Username"
         required
+        value={credentials.email}
+        onChange={(e) =>
+          setCredentials({ ...credentials, email: e.target.value })
+        }
       ></input>
 
       <label for="pass">Password</label>
@@ -64,9 +68,13 @@ function LogIn() {
         type="text"
         placeholder="Enter Password"
         required
+        value={credentials.password}
+        onChange={(e) =>
+          setCredentials({ ...credentials, password: e.target.value })
+        }
       ></input>
 
-      <Link to="/construction" class="styledButton">
+      <Link to="/construction" class="styledButton" onClick={handleSubmit}>
         Login
       </Link>
 
@@ -80,9 +88,8 @@ function LogIn() {
       </Link>
 
       <Link to="/signUp" class="styledButton">
-          Sign Up
+        Sign Up
       </Link>
-      
     </div>
   );
 }
