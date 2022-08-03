@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { json } from "sequelize/types";
 import {useNavigate} from "react-router-dom"
+
+
 function SignUp() {
 
   let navigate = useNavigate();
@@ -39,7 +41,7 @@ function SignUp() {
         type="text"
         placeholder="First Name"
         required
-        value={user.firstName}
+        value={user.firstname}
         onChange={(e) => setUser({ ...user, firstname: e.target.value })}
       ></input>
       <label for="lname">Last Name</label>
@@ -48,7 +50,7 @@ function SignUp() {
         type="text"
         placeholder="Last Name"
         required
-        value={user.lastName}
+        value={user.lastname}
         onChange={(e) => setUser({ ...user, lastname: e.target.value })}
       ></input>
       <label for="user">Email</label>
