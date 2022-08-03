@@ -1,7 +1,6 @@
 import "../styleSheets/index.css";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
-import { json } from "sequelize/types";
 import {useNavigate} from "react-router-dom"
 
 
@@ -23,7 +22,7 @@ function SignUp() {
     await fetch("/auth/register",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:json.stringify(user)
+      body:JSON.stringify(user)
 
     })
     navigate("/inventory");
