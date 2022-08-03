@@ -12,21 +12,37 @@ function SignUp() {
     email:"",
     firstname:"",
     lastname:"",
-    passworddigest:"",
-    roles:"viewer"
+    password:"",
+    role:"viewer"
   })
 
-  async function handleSubmit(e){
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log("sending!")
+      console.log(JSON.stringify(user))
+      const response = await fetch(
+        "/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
+      const parseRes = await response.json();
 
-    await fetch("/auth/register",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(user)
-
-    })
-    navigate("/inventory");
-  }
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken);
+       
+      } else {
+        console.log("no token!")
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
 
   return (
@@ -68,18 +84,11 @@ function SignUp() {
         placeholder="Enter Password"
         required
         value={user.password}
-        onChange={(e) => setUser({ ...user, passworddigest: e.target.value })}
+        onChange={(e) => setUser({ ...user, password: e.target.value })}
       ></input>
-      <select name="dropdown" class="dropdown">
-        <option value="Role" selected>
-          Not a Manager
-        </option>
-        <option value="Java">Manager</option>
-      </select>
-
-      <Link to="" class="styledButton" onClick={() => handleSubmit}>
+      <button class="styledButton" onClick={handleSubmit}>
         Sign Up
-      </Link>
+      </button>
     </div>
   );
 }
