@@ -13,7 +13,8 @@ import ErrorPage from './components/errorPage';
 import SignUp from './components/signUp';
 import CurrentUserProvider from "./contexts/CurrentUser";
 import Inventory from "./components/inventory"
-import App from './App'
+import Construction from "./components/construction"
+import InventoryOrdering from './components/inventoryCRUD/InventoryOrdering';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,7 +23,7 @@ root.render(
       <Routes>
         <Route path="/" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path='/inventory' element={<Inventory/>}/>
+        <Route path='/inventory' element={<InventoryOrdering/>}/>
         <Route path='*' element={<ErrorPage/>}/>
         <Route path='/construction' element={< Construction/>} />
       </Routes>

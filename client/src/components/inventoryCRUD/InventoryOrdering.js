@@ -39,7 +39,7 @@ useEffect(() => {
 // delete item function fetch request:
 const deleteItem = async (id) => {
     try {
-        await fetch(`http://localhost:3070/inventory/${id}`, {
+        await fetch(`/inventory/${id}`, {
             method: 'DELETE'
         });
     

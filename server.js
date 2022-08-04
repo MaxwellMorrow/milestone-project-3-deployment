@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 
 // Auth routes
 
-app.use("/inventory",require("./conrollers/inventory_controller"))
+app.use("/inventory",require("./conrollers/inventory"))
 app.use("/auth",require("./conrollers/jwtAuth"))
 
 app.get("*", (req, res) => {
