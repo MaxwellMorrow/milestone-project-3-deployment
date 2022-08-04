@@ -30,7 +30,7 @@ const onSubmitForm = async(e) => {
 e.preventDefault();
 try {
     const body = { itemname, category, supplier, uniteach, paronhand };
-    const response = await fetch("http://localhost:3070/inventory", {
+    const response = await fetch("/inventory", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

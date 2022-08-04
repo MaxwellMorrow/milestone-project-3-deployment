@@ -31,7 +31,7 @@ const updateItem = async (e) => {
 e.preventDefault();
 try {
     const body = { itemname, category, supplier, paronhand, uniteach, orderamount };
-    await fetch(`http://localhost:3070/inventory/${item.item_id}`, {
+    await fetch(`/inventory/${item.item_id}`, {
     method: 'PUT',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(body)
