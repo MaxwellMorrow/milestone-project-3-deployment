@@ -40,6 +40,7 @@ function LogIn() {
         navigate("/inventory");
       } else {
         console.log("no token!");
+        alert("Wrong Username \r\n or Password 🥺")
       }
     } catch (err) {
       console.error(err.message);

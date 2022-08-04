@@ -91,7 +91,7 @@ function SignUp() {
       </select>
 
       <Link
-        to="/construction"
+        to="/inventory"
         class="styledButton"
         onClick={handleSubmit}
       >
