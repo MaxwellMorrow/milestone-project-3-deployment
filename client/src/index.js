@@ -13,7 +13,6 @@ import ErrorPage from './components/errorPage';
 import SignUp from './components/signUp';
 import CurrentUserProvider from "./contexts/CurrentUser";
 import Construction from "./components/construction"
-import InventoryOrdering from './components/inventoryCRUD/InventoryOrdering';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
