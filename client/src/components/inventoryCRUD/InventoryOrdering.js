@@ -1,7 +1,7 @@
 // imports/dependencies
 import React, { useState, useEffect } from 'react';
-import AddInventory from './AddInventory';
-import EditOrderAmount from './EditOrderAmount'
+import AddInventory from './Addinventory';
+import EditOrderAmount from './EditOrderAmount';
 
 
 // functional component
