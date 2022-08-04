@@ -24,6 +24,7 @@ root.render(
         <Route path="/signup" element={<SignUp />} />
         <Route path='/inventory' element={<Inventory/>}/>
         <Route path='*' element={<ErrorPage/>}/>
+        <Route path='/construction' element={< Construction/>} />
       </Routes>
     </Router>
   </CurrentUserProvider>
