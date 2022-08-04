@@ -143,6 +143,7 @@ try {
               </form>
             </div>
             <div class="modal-footer">
+              <Link to="/inventory">
               <button
                   type="button"
                   class="btn btn-outline-success btn-sm"
@@ -151,6 +152,7 @@ try {
               >
                       Edit
               </button>
+              </Link>
             </div>
       </Modal>
 

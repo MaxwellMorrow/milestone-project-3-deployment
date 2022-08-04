@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 // functional component
 const AddInventory = () => {
@@ -123,9 +123,11 @@ try {
           </form>
         </Modal.Body>
         <Modal.Footer>
+          <Link to="/inventory">
           <Button variant="outline-success" onClick={onSubmitForm}>
             Add
           </Button>
+          </Link>
         </Modal.Footer>
       </Modal>
 
