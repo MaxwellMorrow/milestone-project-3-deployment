@@ -16,7 +16,7 @@ const InventoryOrdering = () => {
   // fetch requests:
   const getItems = async () => {
     try {
-      const response = await fetch("http://localhost:3070/inventory");
+      const response = await fetch("/inventory");
       const jsonData = await response.json();
 
       console.log(jsonData);
