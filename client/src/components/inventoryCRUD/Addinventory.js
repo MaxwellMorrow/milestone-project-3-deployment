@@ -24,7 +24,10 @@ let navigate = useNavigate();
 // modal helper functons:
 const handleClose = () => setShow(false); // closing the modal
 const handleShow = () => setShow(true); // opening the modal
- 
+
+function refreshPage() {
+    window.location.reload(false);
+  }
 
 // fetch request section:
 const onSubmitForm = async(e) => {
@@ -40,7 +43,7 @@ try {
     console.log(response);
 
     handleClose();// reloads the GET route for accessing the whole list of items from database.
-
+    refreshPage();
     } catch (err) {
     console.error(err.message)
     }

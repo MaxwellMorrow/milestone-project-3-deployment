@@ -25,7 +25,9 @@ let navigate = useNavigate();
 // modal helper functions:
 const handleClose = () => setShow(false); // closing the modal
 const handleShow = () => setShow(true); // opening the modal
-
+ function refreshPage() {
+   window.location.reload(false);
+ }
 
 // fetch request for updating stock (PUT)
 const updateItem = async (e) => {
@@ -41,7 +43,7 @@ try {
     console.log(body);
 
    handleClose();
-
+    refreshPage();
 } catch (err) {
     console.error(err.message);
 }
