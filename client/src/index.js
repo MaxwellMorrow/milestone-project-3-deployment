@@ -28,4 +28,3 @@ root.render(
     </Router>
   </CurrentUserProvider>
 );
-

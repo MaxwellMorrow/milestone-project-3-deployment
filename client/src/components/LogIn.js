@@ -37,7 +37,7 @@ function LogIn() {
         console.log(parseRes)
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
-        navigate("/construction");
+        navigate("/inventory");
       } else {
         console.log("no token!");
       }
@@ -75,7 +75,7 @@ function LogIn() {
         }
       ></input>
 
-      <Link to="/construction" class="styledButton" onClick={handleSubmit}>
+      <Link to="/inventory" class="styledButton" onClick={handleSubmit}>
         Login
       </Link>
 
