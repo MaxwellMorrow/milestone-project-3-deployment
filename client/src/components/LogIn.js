@@ -66,7 +66,7 @@ function LogIn() {
       <label for="pass">Password</label>
       <input
         class="input second"
-        type="text"
+        type="password"
         placeholder="Enter Password"
         required
         value={credentials.password}

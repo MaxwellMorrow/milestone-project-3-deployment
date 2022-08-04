@@ -11,7 +11,7 @@ function CurrentUserProvider({ children }) {
   //       "http://localhost:5000/authentication/profile",
   //       {
   //         headers: {
-  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //           token: `Bearer ${localStorage.getItem("token")}`,
   //         },
   //       }
   //     );
