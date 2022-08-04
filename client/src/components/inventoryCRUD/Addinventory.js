@@ -39,7 +39,7 @@ try {
 
     console.log(response);
 
-    navigate("/inventory") // reloads the GET route for accessing the whole list of items from database.
+    handleClose();// reloads the GET route for accessing the whole list of items from database.
 
     } catch (err) {
     console.error(err.message)

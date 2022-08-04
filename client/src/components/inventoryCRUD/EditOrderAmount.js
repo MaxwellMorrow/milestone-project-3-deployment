@@ -40,7 +40,7 @@ try {
 
     console.log(body);
 
-   navigate("/inventory")
+   handleClose();
 
 } catch (err) {
     console.error(err.message);
