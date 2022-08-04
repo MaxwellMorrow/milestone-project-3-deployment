@@ -65,7 +65,7 @@ const InventoryOrdering = () => {
         </thead>
         <tbody class="listItems">
           {items.map((item) => (
-            <tr key={item.item_id}>
+            <tr key={item.itemname}>
               <td>{item.itemname}</td>
               <td>{item.category}</td>
               <td>{item.supplier}</td>
@@ -76,7 +76,7 @@ const InventoryOrdering = () => {
                 <EditOrderAmount item={item} />
               </td>
               <button
-                onClick={() => deleteItem(item.item_id)}
+                onClick={() => deleteItem(item.itemname)}
                 type="button"
                 class="btn btn-outline-danger btn-sm options"
               >

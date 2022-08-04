@@ -32,12 +32,12 @@ router.post('/', async (req, res) => {
 });
 
 // Read Route for a single item to update or delete that one item in particular
-router.get('/:id', async (req, res) => {
+router.get('/:name', async (req, res) => {
     try {
-        const { id } = req.params;
+        const { name } = req.params;
         const item = await pool.query(
-            "SELECT * FROM inventory WHERE item_id = $1",
-            [id]
+            "SELECT * FROM inventory WHERE itemname = $1",
+            [name]
         );
             res.json(item.rows[0]); 
 
@@ -48,13 +48,13 @@ router.get('/:id', async (req, res) => {
     
 
 // UPDATE ROUTE - (PUT route)
-router.put('/:id', async (req, res) => {
+router.put('/:name', async (req, res) => {
     try {
-        const { id } = req.params;
+        const { name } = req.params;
         const { itemname, category, supplier, paronhand, uniteach, orderamount } = req.body;
         const updateItem = await pool.query(
-            "UPDATE inventory SET itemname=$2, category=$3, supplier=$4, paronhand=$5, uniteach=$6, orderamount=$7 WHERE item_id = $1",
-            [id, itemname, category, supplier, paronhand, uniteach, orderamount] 
+            "UPDATE inventory SET itemname=$2, category=$3, supplier=$4, paronhand=$5, uniteach=$6, orderamount=$7 WHERE itemname = $1",
+            [name, itemname, category, supplier, paronhand, uniteach, orderamount] 
         );
             res.json('Item was updated!') // returns response of json that logs in the terminal ('Stock was UPDATED!').
             console.log(res.json())
@@ -66,12 +66,12 @@ router.put('/:id', async (req, res) => {
     
 
 // DELETE ROUTE
-router.delete('/:id', async (req, res) => {
+router.delete('/:name', async (req, res) => {
     try {
-        const { id } = req.params;
+        const { name } = req.params;
         const deleteItem = await pool.query(
-            "DELETE FROM inventory WHERE item_id = $1",
-            [id]
+            "DELETE FROM inventory WHERE itemname = $1",
+            [name]
         );
 
             res.json("Item was DELETED!")

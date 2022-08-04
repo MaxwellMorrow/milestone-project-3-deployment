@@ -38,7 +38,7 @@ try {
 
     console.log(response);
 
-    window.location = '/'; // reloads the GET route for accessing the whole list of items from database.
+    window.location = '/#/inventory'; // reloads the GET route for accessing the whole list of items from database.
 
     } catch (err) {
     console.error(err.message)

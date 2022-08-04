@@ -31,7 +31,7 @@ const updateItem = async (e) => {
 e.preventDefault();
 try {
     const body = { itemname, category, supplier, paronhand, uniteach, orderamount };
-    await fetch(`/inventory/${item.item_id}`, {
+    await fetch(`/inventory/${item.itemname}`, {
     method: 'PUT',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(body)
@@ -39,7 +39,7 @@ try {
 
     console.log(body);
 
-    window.location='/';
+    window.location='/#/inventory';
 
 } catch (err) {
     console.error(err.message);
