@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 // functional component
 const EditOrderAmount = ({ item }) => {
 // vanilla js section
