@@ -1,6 +1,7 @@
 //imports
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 
 // functional component
 const EditOrderAmount = ({ item }) => {
@@ -16,7 +17,7 @@ const [paronhand, setParonhand] = useState(item.paronhand)
 const [uniteach, setUniteach] = useState(item.uniteach)
 const [orderamount, setOrderamount] = useState(item.orderamount)
 
-
+let navigate = useNavigate();
 
 
    // helper function section:
@@ -39,7 +40,7 @@ try {
 
     console.log(body);
 
-    window.location='/#/inventory';
+   navigate("/inventory")
 
 } catch (err) {
     console.error(err.message);
@@ -54,7 +55,7 @@ try {
         type="button"
         class="btn btn-outline-success btn-sm options"
         data-toggle="modal"
-        data-target={`#id${item.item_id}`}
+        data-target={`#id${item.itemname}`}
         onClick={handleShow}
     >
         Edit
@@ -74,7 +75,7 @@ try {
                     id="itemName"
                     placeholder="Order Amount"
                     value={ itemname }
-                    // onChange={e => setOrderamount(e.target.value)}
+                    onChange={e => setItemname(e.target.value)}
                   >
                   </input>
                 </div> 

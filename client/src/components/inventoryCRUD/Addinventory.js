@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 
 
 // functional component
@@ -17,7 +18,7 @@ const [supplier, setSupplier] = useState('')
 const [uniteach, setUniteach] = useState('')
 const [paronhand, setParonhand] = useState('')
 
-
+let navigate = useNavigate();
 
 
 // modal helper functons:
@@ -38,7 +39,7 @@ try {
 
     console.log(response);
 
-    window.location = '/#/inventory'; // reloads the GET route for accessing the whole list of items from database.
+    navigate("/inventory") // reloads the GET route for accessing the whole list of items from database.
 
     } catch (err) {
     console.error(err.message)
